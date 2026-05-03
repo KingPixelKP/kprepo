@@ -6,7 +6,6 @@ package("auto-cli")
 
     on_install(function (package)
         local configs = {}
-        configs["build_main"] = false 
         if package:config("shared") then
             configs.kind = "shared"
         end
