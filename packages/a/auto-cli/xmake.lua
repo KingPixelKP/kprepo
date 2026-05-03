@@ -2,17 +2,12 @@ package("auto-cli")
     set_description("The auto-cli package")
 
     add_urls("https://github.com/KingPixelKP/auto-cli.git")
-    add_versions("0.1.0", "c234be3467f59a6f253af34e7f3a3dc213a99877")
+    add_versions("0.1.0", "f24013f744c7565c2042013cc207532a972be7a7")
 
     on_install(function (package)
-        local configs = {}
-        if package:config("shared") then
-            configs.kind = "shared"
-        end
-        import("package.tools.xmake").install(package, configs)
+        import("package.tools.xmake").install(package)
     end)
 
     on_test(function (package)
-        -- TODO check includes and interfaces
-        -- assert(package:has_cfuncs("foo", {includes = "foo.h"})
+        assert(package:has_cxxincludes("auto-cli/auto-cli.h", {includes = "auto-cli/auto-cli.h"}))
     end)
