@@ -2,7 +2,7 @@ package("auto-cli")
     set_description("The auto-cli package")
 
     add_urls("https://github.com/KingPixelKP/auto-cli.git")
-    add_versions("0.1.0", "b2dd7725eb634a6903743cae7904f1d337d546a4")
+    add_versions("0.1.0", "07da926d11c6de1feaa9f7a615d819ec3a1c18ae")
 
     on_install(function (package)
         local configs = {}
