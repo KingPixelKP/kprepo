@@ -1,0 +1,15 @@
+add_rules("mode.debug", "mode.release")
+add_rules("plugin.compile_commands.autoupdate", {outputdir = "build"})
+
+target("${TARGET_NAME}")
+    set_kind("static")
+    add_headerfiles("src/*.h")
+    add_headerfiles("include/*.h")
+    add_files("src/*.cpp|main.cpp")
+    add_includedirs("include", {public = true})
+    add_includedirs("src", {private = true})
+
+target("main")
+    set_kind("binary")
+    add_files("src/main.cpp")
+    add_deps("${TARGET_NAME}")
