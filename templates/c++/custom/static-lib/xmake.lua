@@ -7,6 +7,7 @@ target("${TARGET_NAME}")
     add_headerfiles("include/*.h")
     add_files("src/*.cpp|main.cpp")
     add_includedirs("include", {public = true})
+    add_includedirs("include/foo", {private = true})
     add_includedirs("src", {private = true})
 
 target("main")
