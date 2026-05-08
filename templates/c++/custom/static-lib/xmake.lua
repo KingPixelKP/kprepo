@@ -4,10 +4,10 @@ add_rules("plugin.compile_commands.autoupdate", {outputdir = "build"})
 target("${TARGET_NAME}")
     set_kind("static")
     --add_headerfiles("src/*.h")
-    add_headerfiles("include/*.h")
+    add_headerfiles("include/foo/*.h". {prefixdir = "foo") -- Change foo to your ptoject name
     add_files("src/*.cpp|main.cpp")
     add_includedirs("include", {public = true})
-    add_includedirs("include/foo", {private = true})
+    add_includedirs("include/foo", {private = true}) -- Change foo to your ptoject name
     add_includedirs("src", {private = true})
 
 target("main")
