@@ -3,7 +3,7 @@ add_rules("plugin.compile_commands.autoupdate", {outputdir = "build"})
 
 target("${TARGET_NAME}")
     set_kind("static")
-    add_headerfiles("src/*.h")
+    --add_headerfiles("src/*.h")
     add_headerfiles("include/*.h")
     add_files("src/*.cpp|main.cpp")
     add_includedirs("include", {public = true})
