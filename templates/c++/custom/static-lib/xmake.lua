@@ -1,9 +1,12 @@
-add_rules("mode.debug", "mode.release")
+add_rules("mode.debug", "mode.release", "mode.coverage")
 add_rules("plugin.compile_commands.autoupdate", {outputdir = "build"})
+
+--Requires Section
+add_requires("gtest")
+add_requires("spdlog")
 
 target("${TARGET_NAME}")
     set_kind("static")
-    --add_headerfiles("src/*.h")
     add_headerfiles("include/foo/*.h". {prefixdir = "foo") -- Change foo to your ptoject name
     add_files("src/*.cpp|main.cpp")
     add_includedirs("include", {public = true})
