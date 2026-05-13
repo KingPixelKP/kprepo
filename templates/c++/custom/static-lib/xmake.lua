@@ -49,10 +49,10 @@ task("coverage")
             os.exec("xmake build --all")
 
             -- run tests
-            os.exec("xmake test -j1")
+            os.exec("xmake test")
         end
 
-
+        os.mkdir("coverage")
         -- generate report
         if option.get("html") then
             print("Generating HTML coverage report...")
