@@ -1,4 +1,4 @@
-#include "public-foo.h"
+#include "foo/public-foo.h"
 
 int main() {
     int a = 5;
