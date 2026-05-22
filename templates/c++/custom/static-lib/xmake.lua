@@ -7,7 +7,7 @@ add_requires("spdlog")
 
 target("${TARGET_NAME}")
     set_kind("static")
-    add_headerfiles("include/foo/*.h". {prefixdir = "foo"}) -- Change foo to your ptoject name
+    add_headerfiles("include/foo/*.h", {prefixdir = "foo"}) -- Change foo to your ptoject name
     add_files("src/*.cpp|main.cpp")
     add_includedirs("include", {public = true})
     add_includedirs("include/foo", {private = true}) -- Change foo to your ptoject name
